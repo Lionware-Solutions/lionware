@@ -2,22 +2,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
+/* Estilo base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: "Poppins", sans-serif;
     font-weight: 200;
+    overflow: hidden;
     font-style: normal;
     background-color: #f0f0f0; /* Fondo claro, neutro y elegante */
 }
+/* -------------scroll config----------------------- */
+html {
+    scroll-behavior: smooth;
+}
+/* Estilo de la barra de scroll para navegadores WebKit (Chrome, Safari, Edge, etc.) */
+::-webkit-scrollbar {
+    width: 12px; /* Anchura de la barra de scroll */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #2e4053; /* Color del fondo de la barra de scroll */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d4ac0d; /* Color dorado para la "perilla" de scroll */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 3px solid #2e4053; /* Borde oscuro alrededor de la perilla */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a67d00; /* Tonalidad más fuerte al pasar el ratón */
+}
+
+
+/* Contenedor de la sección para el scroll snapping */
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e4053; /* Fondo oscuro y elegante */
+    color: white;
+}
+
+
 
 a {
     text-decoration: none;
@@ -104,6 +145,7 @@ a {
 /* ------------------about---------------- */
 .about-section {
     height: 100vh;
+    object-fit: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -194,6 +236,11 @@ a {
 }
 
 /* --------------contact------------- */
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .contact .btn-submit {
     background-color: #d4ac0d;
     color: white;
@@ -204,6 +251,15 @@ a {
 
 .contact .btn-submit:hover {
     background-color: #a67d00;
+}
+
+/* -----------------footer----------------- */
+.footer{
+    position: relative;
+    color: rgba(255, 255, 255, 0.756);
+    bottom: 0;
+    width: 100%;
+    background-color: #262628;
 }
 
 @media (max-width: 576px) {
