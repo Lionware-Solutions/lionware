@@ -7,7 +7,7 @@
   /*===== Colores =====*/
   /* Updated for dark theme */
   --hue-color: 224;
-  --first-color: hsl(209, 41%, 52%); /* Soft blue for highlights */
+  --first-color: hsl(60, 100%, 35%); /* Soft blue for highlights */
   --second-color: hsl(210, 12%, 15%); /* Dark, elegant background */
   --text-color: hsl(0, 0%, 98%); /* White for text */
   --bg-color: hsl(210, 12%, 12%); /* Background slightly lighter than second color */
@@ -140,6 +140,17 @@ img {
     transition: 0.5s;
   }
 }
+.nav__logo-svg {
+  position: absolute;
+  left: 0;
+  transform: scale(.3);  
+}
+.nav__first-column{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .nav__item {
   margin-bottom: var(--mb-4);
   color: var(--text-color);
@@ -161,7 +172,8 @@ img {
   background-color: var(--first-color);
 }
 .nav__logo {
-  color: var(--first-color);
+  margin-left: 4rem;
+  color: var(--text-color);
 }
 .nav__toggle {
   color: var(--first-color);
@@ -365,7 +377,7 @@ img {
   padding: 2rem 0;
 }
 .footer__title {
-  font-size: 2rem;
+  font-size: 1rem;
   margin-bottom: var(--mb-4);
 }
 .footer__social {
@@ -377,7 +389,7 @@ img {
   margin: 0 var(--mb-2);
 }
 .footer__copy {
-  font-size: var(--smaller-font-size);
+  font-size: 0.7rem;
 }
 
 /* ===== MEDIA QUERIES=====*/
