@@ -1,244 +1,183 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="lionwarelogo" href="/lionware.svg">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <title>Lionware Solutions</title>
 </head>
-
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light py-md-3 px-md-5">
-            <div class="container-fluid">
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Lionware Solutions</a>
+            </div>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fa fa-bars text-light"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item px-4 py-2">
-                            <a href="#home">Home</a>
-                        </li>
-                        <li class="nav-item px-4 py-2">
-                            <a href="#about">About</a>
-                        </li>
-                        <li class="nav-item px-4 py-2">
-                            <a href="#services">Services</a>
-                        </li>
-                        <li class="nav-item px-4 py-2">
-                            <a href="#portfolio">Portfolio</a>
-                        </li>
-                        <li class="nav-item px-4 py-2">
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">Portfolio</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
             </div>
         </nav>
     </header>
 
-    <main class="scroll-container">
-        <!-- Sección de inicio -->
-        <section class="home" id="home">
-            <div class="home-container">
-                <div class="layer d-flex justify-content-center align-items-center text-light w-100 h-100">
-                    <div class="home-text text-center">
-                        <h1>
-                            Web Development Excellence
-                            <br>
-                            Delivered by Experts
-                        </h1>
-                        <p class="pt-4 pb-4 fs-5">
-                            At Lionware Solutions, we provide tailor-made digital solutions for your business needs.
-                            <br>
-                            Let us take your online presence to the next level!
-                        </p>
-                        <button class="rounded-pill p-3">
-                            <a href="#about">LEARN MORE</a>
-                        </button>
+    <main class="l-main">
+        <section class="home bd-grid" id="home">
+            <div class="home__data">
+                <h1 class="home__title">Welcome to <span class="home__title-color">Lionware Solutions</span><br>Your IT Partner</h1>
+                <p class="home__text">At Lionware Solutions, we lead the way in IT consultancy, delivering innovative digital solutions to take your business to new heights. We are the kings of the IT jungle.</p>
+                <a href="#contact" class="button">Get in Touch</a>
+            </div>
+
+            <div class="home__social">
+                <a href="" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                <a href="" class="home__social-icon"><i class='bx bxl-github'></i></a>
+            </div>
+
+            <div class="home__img">
+                <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0" mask-type="alpha">
+                        <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                    </mask>
+                    <g mask="url(#mask0)">
+                        <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                        
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <!--===== ABOUT =====-->
+        <section class="about section" id="about">
+            <h2 class="section-title">About Lionware Solutions</h2>
+
+            <div class="about__container bd-grid">
+                <div class="about__img">
+                    <img src="assets/img/about.jpg" alt="">
+                </div>
+                
+                <div>
+                    <h2 class="about__subtitle">We are the IT Kings</h2>
+                    <p class="about__text">Lionware Solutions is more than an IT consultancy. We are the leaders in transforming businesses and expanding their online presence. Like the lion, we dominate the digital jungle with cutting-edge solutions tailored to make your business roar louder than the competition.</p>           
+                </div>                                   
+            </div>
+        </section>
+
+        <!--===== SKILLS =====-->
+        <section class="skills section" id="skills">
+            <h2 class="section-title">Our Expertise</h2>
+
+            <div class="skills__container bd-grid">          
+                <div>
+                    <h2 class="skills__subtitle">Our IT Capabilities</h2>
+                    <p class="skills__text">We offer a wide range of digital services designed to help businesses thrive in an ever-changing digital world. From web development to robust cybersecurity, we cover it all.</p>
+
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bxl-html5 skills__icon'></i>
+                            <span class="skills__name">HTML5</span>
+                        </div>
+                        <div class="skills__bar skills__html"></div>
+                        <div><span class="skills__percentage">95%</span></div>
                     </div>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bxl-css3 skills__icon'></i>
+                            <span class="skills__name">CSS3</span>
+                        </div>
+                        <div class="skills__bar skills__css"></div>
+                        <div><span class="skills__percentage">85%</span></div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bxl-javascript skills__icon'></i>
+                            <span class="skills__name">JavaScript</span>
+                        </div>
+                        <div class="skills__bar skills__js"></div>
+                        <div><span class="skills__percentage">65%</span></div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bxs-paint skills__icon'></i>
+                            <span class="skills__name">UI/UX Design</span>
+                        </div>
+                        <div class="skills__bar skills__ux"></div>
+                        <div><span class="skills__percentage">85%</span></div>
+                    </div>
+                </div>
+                
+                <div>              
+                    <img src="assets/img/work3.jpg" alt="" class="skills__img">
                 </div>
             </div>
         </section>
 
-        <!-- Sección Acerca de -->
-        <section class="about-section" id="about">
-            <div class="container pt-3 pb-3">
-                <div class="about-text text-center pt-5 pb-5">
-                    <h2>Why Choose Lionware?</h2>
-                    <p class="pt-4 pb-4 fs-5">
-                        We specialize in creating powerful, secure, and scalable web applications that grow your
-                        business.
-                        <br> Our professional team ensures top-notch service from start to finish.
-                    </p>
-                    <button class="rounded-pill p-3">
-                        <a href="#services">DISCOVER OUR SERVICES</a>
-                    </button>
-                </div>
+        <!--===== WORK =====-->
+        <section class="work section" id="work">
+            <h2 class="section-title">Our Projects</h2>
+
+            <div class="work__container bd-grid">
+                <a href="" class="work__img">
+                    <img src="assets/img/work1.jpg" alt="">
+                </a>
+                <a href="" class="work__img">
+                    <img src="assets/img/work2.jpg" alt="">
+                </a>
+                <a href="" class="work__img">
+                    <img src="assets/img/work3.jpg" alt="">
+                </a>
+                <a href="" class="work__img">
+                    <img src="assets/img/work4.jpg" alt="">
+                </a>
+                <a href="" class="work__img">
+                    <img src="assets/img/work5.jpg" alt="">
+                </a>
+                <a href="" class="work__img">
+                    <img src="assets/img/work6.jpg" alt="">
+                </a>
             </div>
         </section>
 
-        <!-- Sección de servicios -->
-        <section class="Service-section" id="services">
-            <div class="container pt-3 pb-3">
-                <div class="Service-text text-center py-5">
-                    <div class="title">
-                        <h2 class="py-4">Our Services</h2>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="content text-center p-3">
-                                <i class="fa-solid fa-code"></i>
-                                <h3>Web Development</h3>
-                                <p class="fs-5">Customized solutions for your digital needs.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="content text-center p-3">
-                                <i class="fa-solid fa-lock"></i>
-                                <h3>Security First</h3>
-                                <p class="fs-5">We prioritize security to protect your data.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="content text-center p-3">
-                                <i class="fa-solid fa-mobile"></i>
-                                <h3>Responsive Design</h3>
-                                <p class="fs-5">Our designs look great on all devices.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="content text-center p-3">
-                                <i class="fa-solid fa-rocket"></i>
-                                <h3>Fast Deployment</h3>
-                                <p class="fs-5">Quick and efficient project completion.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!--===== CONTACT =====-->
+        <section class="contact section" id="contact">
+            <h2 class="section-title">Get in Touch</h2>
+
+            <div class="contact__container bd-grid">
+                <form action="" class="contact__form">
+                    <input type="text" placeholder="Name" class="contact__input">
+                    <input type="email" placeholder="Email" class="contact__input">
+                    <textarea name="" id="" cols="0" rows="10" class="contact__input" placeholder="Your message"></textarea>
+                    <input type="submit" value="Submit" class="contact__button button">
+                </form>
             </div>
         </section>
-
-        <!-- Sección del portafolio -->
-        <section class="portfolio" id="portfolio">
-            <div class="container pt-3 pb-3">
-                <div class="Service-text text-center py-5">
-                    <div class="title">
-                        <h2 class="py-4">Our Projects</h2>
-                    </div>
-                </div>
-
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <div class="item position-relative">
-                            <img class="w-100" src="images/1.jpg" alt="portfolio">
-                            <div class="item-layer w-100 h-100 position-absolute top-0 d-flex flex-column 
-                        justify-content-center align-items-center text-white">
-                                <span>Web Design</span>
-                                <h3>Project A</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="item position-relative">
-                            <img class="w-100" src="images/2.jpg" alt="portfolio">
-                            <div class="item-layer w-100 h-100 position-absolute top-0 d-flex flex-column 
-                        justify-content-center align-items-center text-white">
-                                <span>Mobile App</span>
-                                <h3>Project B</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="item position-relative">
-                            <img class="w-100" src="images/3.jpg" alt="portfolio">
-                            <div class="item-layer w-100 h-100 position-absolute top-0 d-flex flex-column 
-                        justify-content-center align-items-center text-white">
-                                <span>Custom Solution</span>
-                                <h3>Project C</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </section>
-
-        <!-- Sección de contacto -->
-        <section id="contact" class="contact">
-            <div class="container py-5 px-3">
-                <div class="contact-form w-50 m-auto">
-                    <div class="title text-center">
-                        <h2 class="py-3">Contact Us</h2>
-                        <p class="py-2">Have a project in mind? Let's make it happen!</p>
-                    </div>
-                    <form action="">
-                        <input type="text" placeholder="Full Name" class="form-control mb-3 p-3" required>
-                        <input type="email" placeholder="Email address" class="form-control mb-3 p-3" required>
-                        <textarea name="message" cols="30" rows="5" placeholder="Your Message" class="form-control mb-5"
-                            required></textarea>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <button type="submit"
-                                class="w-75 m-auto p-4 rounded-pill border-0 btn-submit">SUBMIT</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- Footer -->
-            <footer class="footer text-center text-lg-start">
-                <!-- Section: Social media -->
-                <div class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-                    <!-- Left -->
-                    <div class="me-5 d-none d-lg-block">
-                        <span>Get connected with us on social networks:</span>
-                    </div>
-                    <!-- Left -->
-
-                    <!-- Right -->
-                    <div>
-                        <a href="https://www.facebook.com/ana.mera.94651/" class="me-4 link-secondary">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://wsend.co/201005729533" class="me-4 link-secondary">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                        <a href="https://instagram.com/ameraalaa3?igshid=YWJhMjlhZTc=" class="me-4 link-secondary">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="" class="me-4 link-secondary">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/AmiraAlaa3" class="me-4 link-secondary">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <!-- Right -->
-                </div>
-                <!-- Copyright -->
-                <div class="text-center p-4">
-                    © 2024 Copyright:
-                    <a class="text-reset fw-bold">Lionware Solutions</a>
-                    All rights reserved.
-                </div>
-            </footer>
-        </section>
-
     </main>
 
+    <!--===== FOOTER =====-->
+    <footer class="footer">
+        <p class="footer__title">Lionware Solutions</p>
+        <div class="footer__social">
+            <a href="#" class="footer__icon"><i class='bx bxl-facebook'></i></a>
+            <a href="#" class="footer__icon"><i class='bx bxl-instagram'></i></a>
+            <a href="#" class="footer__icon"><i class='bx bxl-twitter'></i></a>
+        </div>
+        <p class="footer__copy">&#169; 2024 Lionware Solutions. All rights reserved</p>
+    </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
 </body>
-
 </html>
