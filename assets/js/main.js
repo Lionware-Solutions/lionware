@@ -64,31 +64,31 @@ function cambiarSeccion(seccion) {
         document.getElementById('titulo').innerText = "Web development";
         document.getElementById('parrafo').innerHTML = `
             <ul>
-                <li>Diseño web profesional y galardonado</li>
-                <li>Características innovadoras que no encontrarás en ningún otro lugar</li>
-                <li>Opciones de diseño personalizadas o semi-personalizadas</li>
-                <li>Optimización SEO integrada y mejoras de conversión</li>
-                            <li>Optimización SEO integrada y mejoras de conversión</li>
-                            <li>Optimización SEO integrada y mejoras de conversión</li>
-                            <li>Optimización SEO integrada y mejoras de conversión</li>
-                            <li>Optimización SEO integrada y mejoras de conversión</li>
-                            <li>2Optimización SEO integrada y mejoras de conversión</li>
-            </ul>`;
+                            <li>Professional web design</li>
+                            <li>24/7 support</li>
+                            <li>User and administrator system</li>
+                            <li>Inventory management</li>
+                            <li>Purchases via whatsapp</li>
+                            <li>Shopping cart</li>
+                            <li>Dynamic sites</li>
+                            <li>Social media integrations</li>
+                            <li>Integration with chatbot</li>
+                        </ul>`;
         document.getElementById('video').src = "assets/videos/Mamina moda.mp4"; // Cambia la fuente del video aquí
     } else if (seccion === 'edicion') {
         
         document.getElementById('titulo').innerText = "Video editing";
         document.getElementById('parrafo').innerHTML = `
             <ul>
-                <li>Edición de video de alta calidad con efectos visuales</li>
-                <li>Post-producción para lograr un estilo visual impactante</li>
-                <li>Adaptación de videos para redes sociales y presentaciones</li>
-                <li>Opciones de diseño personalizadas o semi-personalizadas</li>
-                            <li>Optimización SEO integrada y mejoras de conversión</li>
-                            <li>Optimización SEO integrada y mejoras de conversión</li>
-                            <li>Optimización SEO integrada y mejoras de conversión</li>
-                            <li>Optimización SEO integrada y mejoras de conversión</li>
-                            <li>2Optimización SEO integrada y mejoras de conversión</li>
+                <li>Advertising</li>
+                <li>High quality with visual effects</li>
+                <li>Review Post-production</li>
+                <li>Custom animations</li>
+                <li>Custom Edition</li>
+                            <li>Unlimited revisions</li>
+                            <li>Animations and effects</li>
+                            <li>Social Media Optimization</li>
+                            <li>Reels, TikTok, Short, etc</li>
             </ul>`;
         document.getElementById('video').src = "assets/videos/LW..mp4"; // Cambia la fuente del video aquí
     }
