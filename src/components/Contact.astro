@@ -1,0 +1,103 @@
+---
+import { Icon } from 'astro-icon/components'
+
+---
+
+<section id="contact">
+	<div class="mt-16 text-center">
+		<h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+			<span class="text-primary poppins"> Contact</span>
+			me
+		</h1>
+	</div>
+	<div class="grid md:grid-cols-2 py-24 gap-4 relative">
+		<div>
+			<h2 class="text-xl font-bold my-2">Let's Connect</h2>
+			<p class="mb-4 max-w-md">
+				Don't hesitate to send me a message or an e-mail. <br />I will get back to you
+				as fast as I can.
+			</p>
+			<div class="flex flex-col gap-4 text-xl">
+				<div class="flex flex-row gap-x-6">
+					<a
+						href="https://github.com/"
+						target="_blank"
+						class="hover:text-primary transition flex flex-row gap-x-2"
+						aria-label="GitHub Profile">
+						<Icon
+							name="github"
+							class="size-8" />
+						Github
+					</a>
+					<a
+						href="https://www.linkedin.com/"
+						target="_blank"
+						class="hover:text-primary transition flex flex-row gap-x-2"
+						aria-label="LinkedIn Profile">
+						<Icon
+							name="linkedin"
+							class="size-8" />
+						Linkedin
+					</a>
+				</div>
+					<a
+						href="john@email.com"
+						class="text-base md:text-lg font-bold hover:text-primary transition flex flex-row items-center gap-1">
+						<Icon
+							name="envelope"
+							class="size-4" />
+						john@email.com</a
+					>
+				
+			</div>
+		</div>
+		<div>
+			<form
+				class="flex flex-col"
+				method="POST">
+				<div class="mb-6">
+					<label
+						for="email"
+						class="block mb-2 text-sm font-medium"
+						>Your email</label
+					><input
+						type="email"
+						id="email"
+						required
+						class="bg-white/10 border border-primary text-sm outline-none rounded-md block w-full p-3 focus:ring-2 ring-primary"
+						placeholder="john@example.com"
+						name="email" />
+				</div>
+				<div class="mb-6">
+					<label
+						for="subject"
+						class="block text-sm mb-2 font-medium"
+						>Subject</label
+					><input
+						type="text"
+						id="subject"
+						required
+						class="bg-white/10 border border-primary text-sm outline-none rounded-md block w-full p-3 focus:ring-2 ring-primary"
+						placeholder="Subject of your message"
+						name="subject" />
+				</div>
+				<div class="mb-6">
+					<label
+						for="message"
+						class="block text-sm mb-2 font-medium"
+						>Message</label
+					><textarea
+						name="message"
+						id="message"
+						class="bg-white/10 border border-primary text-sm outline-none rounded-md block w-full p-3 focus:ring-2 ring-primary"
+						placeholder="Let's talk about..."></textarea>
+				</div>
+				<button
+					type="submit"
+					class="bg-primary hover:bg-primary/80 font-extrabold py-2.5 px-5 rounded-lg w-full text-black">
+					Send Message
+				</button>
+			</form>
+		</div>
+	</div>
+</section>

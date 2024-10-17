@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Projects from '../components/Projects.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout title="Aleksandar Atanasovski">
+	<main class="flex flex-col flex-1 p-4">
+		<Hero />
+		<div class="md:mb-36" />
+		<Projects />
+		<div class="md:my-24" />
+		<About />
+		<div class="md:my-24" />
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+
+</style>
