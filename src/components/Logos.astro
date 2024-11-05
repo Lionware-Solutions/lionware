@@ -1,0 +1,24 @@
+
+<style is:global>
+  @import '../styles/Styles.css';
+</style>
+
+<div class="logos">
+    <div class="logos-slide">
+      <img src="../../public/logos/AWS.svg" class="svg-icon"/>
+      <img src="../../public/logos/Firebase.svg" class="svg-icon"/>
+      <img src="../../public/logos/Santander.svg" class="svg-icon"/>
+      <img src="../../public/logos/Accenture.svg" class="svg-icon"/>
+      <img src="../../public/logos/Telecom.svg" class="svg-icon"/>
+      <img src="../../public/logos/Revelo.svg" class="svg-icon"/>
+      <img src="../../public/logos/Google.svg" class="svg-icon"/>
+      <img src="../../public/logos/Docker.svg" class="svg-icon"/>
+    </div>
+  </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copy = document.querySelector(".logos-slide").cloneNode(true);
+    document.querySelector(".logos").appendChild(copy);
+  });
+</script>
