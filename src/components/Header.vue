@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { Image } from 'astro:assets';
+
 import ThemeToggle from './ThemeToggle.vue'
 import Code from '../icons/Code.vue'
 import ArrowUp from '../icons/ArrowUp.vue'
@@ -29,13 +31,14 @@ const isOpen = ref(false)
 
 <template>
   <header class="sticky z-50 top-0 duration-200 px-4 border-b border-solid" :class="{
-    'py-4 dark:bg-black bg-slate-200 border-primary border-b-2': y > 0,
+    'py-4 dark:bg-black bg-slate-200 ': y > 0,
     'py-6 bg-transparent border-transparent': y <= 0,
   }">
     <nav class="flex flex-row items-center justify-between max-w-[1400px] mx-auto">
       <div class="flex gap-4 items-center cursor-pointer text-primary hover:text-primary/80" @click="goTop">
         <span class="inline-block">
           <Code class="size-8" />
+
         </span>
         <h1 class="font-medium text-xl">
 
@@ -44,7 +47,6 @@ const isOpen = ref(false)
       </div>
 
       <div class="flex gap-4 items-center ml-auto relative">
-        <ThemeToggle />
         <button aria-label="expand mobile menu button" @click="isOpen = !isOpen"
           class="md:hidden block p-2 absolute -top-1 right-0" :class="{
             open: isOpen,
@@ -59,7 +61,7 @@ const isOpen = ref(false)
       <nav class="items-center flex-row hidden md:flex">
         <div class="flex pr-3">
           <div class="sm:flex items-center gap-4 text-center hidden">
-            <a href="#home" class="hover:text-primary hover:underline transition">
+            <a href="#hero" class="hover:text-primary hover:underline transition">
               <p>Home</p>
             </a>
             <a href="#about" class="hover:text-primary hover:underline transition">
@@ -76,7 +78,7 @@ const isOpen = ref(false)
             </a>
           </div>
         </div>
-        
+        <ThemeToggle />
       </nav>
     </nav>
 
@@ -99,7 +101,11 @@ const isOpen = ref(false)
         class="rounded p-2 bg-primary animate-link text-black">
         Get in touch
       </a>
+      <ThemeToggle />
+
+
     </nav>
+
 
     <div class="fixed bottom-0 right-0 p-10 z-[10]">
       <button aria-label="go to top button" @click="goTop"

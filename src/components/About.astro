@@ -1,39 +1,47 @@
 ---
 import { Image } from "astro:assets";
-import {ABOUT_SECTION} from '../data/constants'
-
-
-
 ---
 
-
-<section id="about">
-	<div
-		class="flex flex-col gap-2 text-center py-4">
-		<h6 class="text-large sm:text-xl md:text-2xl">Want to know more?</h6>
-		<h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
-			A bit <span class="poppins text-primary">about</span> me.
-		</h3>
-	</div>
-	<div class="md:grid md:grid-cols-2 gap-8 items-center py-8">
-		<Image
-			loading="lazy"
-			class="w-full h-full object-cover rounded"
-			alt="about image "
-			src="/placeholder.png"
-			width="670"
-			height="450" />
+<section id="about" class="py-10">
+  <div class="flex flex-col gap-2 text-center py-4">
+    <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl mt-10 mb-16">
+      A bit <span class="poppins text-primary">about</span> us
+    </h3>
+  </div>
+  
+  <div class="md:grid md:grid-cols-2 gap-8 items-center py-8">
+	<div class="flex p-0.5 relative max-w-[700px] max-h-auto w-full mx-auto">
 		<div
-			class="text-left flex flex-col h-full poppins font-semibold text-balance mt-6 md:mt-0">
-			<p class="text-base md:text-lg">
-				{ABOUT_SECTION.section1}
-			</p>
-			<p class="text-base md:text-lg mt-2">
-				{ABOUT_SECTION.section2}
-			</p>
-			<p class="text-base md:text-lg mt-2">
-				{ABOUT_SECTION.section3}
-			</p>
+			class="absolute inset-0 overflow-hidden rounded-md flex items-center justify-center">
+			<div
+				class="bg-gradient-to-r absolute inset-[-20px] from-cyan-400 to-primary specialSpin" />
 		</div>
+	
+		<Image
+			loading="eager"
+			fetchpriority="high"
+			src="/work3.jpg"
+			alt="programming"
+			class="w-full h-full object-cover z-[2] rounded"
+			width="600"
+			height="400"
+			 />
 	</div>
+    
+    <div class="text-left flex flex-col h-full poppins  text-balance mt-6 md:mt-0">
+      <h2 class="text-2xl md:text-3xl text-primary font-semibold">We are the IT Kings</h2>
+      
+      <p class="text-base md:text-lg mt-4 font-semibold">
+        Lionware Solutions is more than an IT consultancy.
+      </p>
+
+      <p class="text-base md:text-lg mt-4">
+        We are the leaders in transforming businesses and expanding their online presence. Like the lion, we dominate the digital jungle with cutting-edge solutions tailored to make your business roar louder than the competition.
+      </p>
+
+      <a href="#contact" class="inline-block w-[10rem] mt-[7rem] px-6 py-3 rounded-full bg-primary text-white hover:bg-primary/90 transition">
+        More about us
+      </a>
+    </div>
+  </div>
 </section>
