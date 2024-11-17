@@ -1,0 +1,26 @@
+---
+interface Props {
+	title: string
+	description: string
+	imgUrl: string
+}
+
+const { title, description, imgUrl } = Astro.props
+---
+
+<div class="shadow-lg transition-transform hover:scale-105 rounded-lg overflow-hidden bg-white dark:bg-[#1a1a1a] w-full max-w-[400px] mx-auto flex flex-col">
+	<div
+		class="h-48"
+		style={{
+			backgroundImage: `url(${imgUrl})`,
+			backgroundSize: 'cover',
+			backgroundPosition: 'center',
+		}}>
+	</div>
+	<div class="flex-grow p-4 text-center">
+		<h5 class="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">{ title }</h5>
+		<p class="text-gray-600 dark:text-gray-400 text-sm">
+			{ description }
+		</p>
+	</div>
+</div>

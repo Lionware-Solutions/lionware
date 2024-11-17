@@ -1,103 +1,118 @@
 ---
-import { Icon } from 'astro-icon/components'
-
+import { Icon } from 'astro-icon/components';
 ---
 
-<section id="contact">
-	<div class="mt-16 text-center">
-		<h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-			<span class="text-primary poppins"> Contact</span>
-			me
-		</h1>
-	</div>
-	<div class="grid md:grid-cols-2 py-24 gap-4 relative">
-		<div>
-			<h2 class="text-xl font-bold my-2">Let's Connect</h2>
-			<p class="mb-4 max-w-md">
-				Don't hesitate to send me a message or an e-mail. <br />I will get back to you
-				as fast as I can.
-			</p>
-			<div class="flex flex-col gap-4 text-xl">
-				<div class="flex flex-row gap-x-6">
-					<a
-						href="https://github.com/"
-						target="_blank"
-						class="hover:text-primary transition flex flex-row gap-x-2"
-						aria-label="GitHub Profile">
-						<Icon
-							name="github"
-							class="size-8" />
-						Github
-					</a>
-					<a
-						href="https://www.linkedin.com/"
-						target="_blank"
-						class="hover:text-primary transition flex flex-row gap-x-2"
-						aria-label="LinkedIn Profile">
-						<Icon
-							name="linkedin"
-							class="size-8" />
-						Linkedin
-					</a>
-				</div>
-					<a
-						href="john@email.com"
-						class="text-base md:text-lg font-bold hover:text-primary transition flex flex-row items-center gap-1">
-						<Icon
-							name="envelope"
-							class="size-4" />
-						john@email.com</a
-					>
-				
-			</div>
-		</div>
-		<div>
-			<form
-				class="flex flex-col"
-				method="POST">
-				<div class="mb-6">
-					<label
-						for="email"
-						class="block mb-2 text-sm font-medium"
-						>Your email</label
-					><input
-						type="email"
-						id="email"
-						required
-						class="bg-white/10 border border-primary text-sm outline-none rounded-md block w-full p-3 focus:ring-2 ring-primary"
-						placeholder="john@example.com"
-						name="email" />
-				</div>
-				<div class="mb-6">
-					<label
-						for="subject"
-						class="block text-sm mb-2 font-medium"
-						>Subject</label
-					><input
-						type="text"
-						id="subject"
-						required
-						class="bg-white/10 border border-primary text-sm outline-none rounded-md block w-full p-3 focus:ring-2 ring-primary"
-						placeholder="Subject of your message"
-						name="subject" />
-				</div>
-				<div class="mb-6">
-					<label
-						for="message"
-						class="block text-sm mb-2 font-medium"
-						>Message</label
-					><textarea
-						name="message"
-						id="message"
-						class="bg-white/10 border border-primary text-sm outline-none rounded-md block w-full p-3 focus:ring-2 ring-primary"
-						placeholder="Let's talk about..."></textarea>
-				</div>
-				<button
-					type="submit"
-					class="bg-primary hover:bg-primary/80 font-extrabold py-2.5 px-5 rounded-lg w-full text-black">
-					Send Message
-				</button>
-			</form>
-		</div>
-	</div>
+<section id="contact" class="py-16 px-4 text-gray-800 dark:text-gray-100">
+  <div class="text-center mb-16">
+    <h1 class="text-3xl lg:text-4xl font-bold tracking-tight">
+      Have a project in mind? <span class="text-primary">Contact</span> us!
+    </h1>
+  </div>
+
+  <!-- Disposición en tres columnas -->
+  <div class="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-start">
+    <!-- Información de Contacto -->
+    <div class="flex flex-col justify-between">
+      <div>
+        <h2 class="text-2xl font-bold mb-4">Let's Build Something Great Together</h2>
+        <p class="mb-6 text-lg">
+          Whether you have an idea or need assistance with a project, our team is here to help you achieve your business goals. Connect with us via email or through our social platforms, and let’s start building the future of your business.
+        </p>
+        <div class="flex flex-col gap-4 text-lg">
+          <div class="flex items-center gap-x-4">
+            <a href="https://github.com/" target="_blank" class="hover:text-primary flex items-center gap-x-2 transition" aria-label="GitHub Profile">
+              <Icon name="github" class="w-6 h-6" />
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank" class="hover:text-primary flex items-center gap-x-2 transition" aria-label="LinkedIn Profile">
+              <Icon name="linkedin" class="w-6 h-6" />
+              LinkedIn
+            </a>
+          </div>
+          <a href="mailto:contact@lionware.com" class="text-lg font-bold hover:text-primary flex items-center gap-x-2 transition">
+            <Icon name="envelope" class="w-5 h-5" />
+            contact@lionware.com
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulario de Contacto -->
+    <div>
+      <form class="flex flex-col space-y-6" method="POST">
+        <div>
+          <label for="email" class="block mb-2 text-sm font-semibold">Your Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="you@example.com"
+            class="w-full p-3 rounded-md bg-transparent border border-gray-500 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+        <div>
+          <label for="subject" class="block mb-2 text-sm font-semibold">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            required
+            placeholder="Project or Service Inquiry"
+            class="w-full p-3 rounded-md bg-transparent border border-gray-500 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+        <div>
+          <label for="message" class="block mb-2 text-sm font-semibold">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Tell us about your project or how we can help..."
+            required
+            class="w-full p-3 rounded-md bg-transparent border border-gray-500 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+            rows="5"
+          ></textarea>
+        </div>
+        <button type="submit" class="bg-primary text-white font-semibold py-3 rounded-md hover:bg-primary-dark transition duration-300">
+          Get in Touch
+        </button>
+      </form>
+    </div>
+
+    <!-- Calendly Widget -->
+    <div class="bg-white dark:bg-slate-800 rounded-md shadow-md p-4">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/lionwaresolution/30min" style="min-width:100%; height:450px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </div>
 </section>
+
+<style is:global>
+  /* Colores principales y transiciones */
+  .text-primary {
+    color: #58a6ff;
+  }
+
+  .bg-primary {
+    background-color: #58a6ff;
+  }
+
+  .bg-primary-dark {
+    background-color: #1f6feb;
+  }
+
+  /* Transición suave para el botón */
+  button[type="submit"]:hover {
+    background-color: #1f6feb;
+  }
+
+  /* Transiciones en enlaces */
+  a:hover {
+    color: #58a6ff;
+  }
+
+  /* Ajustes para el widget de Calendly en modo oscuro */
+  .calendly-inline-widget iframe {
+    background: transparent;
+  }
+</style>

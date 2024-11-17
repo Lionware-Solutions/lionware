@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { Image } from 'astro:assets';
-
 import ThemeToggle from './ThemeToggle.vue'
-import Code from '../icons/Code.vue'
 import ArrowUp from '../icons/ArrowUp.vue'
 
 const props = defineProps(['initialY'])
@@ -30,18 +27,18 @@ const isOpen = ref(false)
 </script>
 
 <template>
-  <header class="sticky z-50 top-0 duration-200 px-4 border-b border-solid" :class="{
-    'py-4 dark:bg-black bg-slate-200 ': y > 0,
+  <header class="sticky z-50 top-0 duration-200 px-4 border-b border-solid " :class="{
+    'py-4 dark:bg-[#040917] bg-slate-200 border-white/10 ': y > 0,
     'py-6 bg-transparent border-transparent': y <= 0,
   }">
     <nav class="flex flex-row items-center justify-between max-w-[1400px] mx-auto">
       <div class="flex gap-4 items-center cursor-pointer text-primary hover:text-primary/80" @click="goTop">
         <span class="inline-block">
-          <Code class="size-8" />
+          <img class="px-2 w-[5rem]" src="/lionwareok.svg" alt="">
+
 
         </span>
         <h1 class="font-medium text-xl">
-
           <span class="font-bold poppins ml-1 hidden md:inline-block">Lionware Solutions </span>
         </h1>
       </div>
@@ -61,26 +58,26 @@ const isOpen = ref(false)
       <nav class="items-center flex-row hidden md:flex">
         <div class="flex pr-3">
           <div class="sm:flex items-center gap-4 text-center hidden">
-            <a href="#hero" class="hover:text-primary hover:underline transition">
+            <a href="#hero" class="hover:text-primary ">
               <p>Home</p>
             </a>
-            <a href="#about" class="hover:text-primary hover:underline transition">
+            <a href="#about" class="hover:text-primary ">
               <p>About us</p>
             </a>
-            <a href="#services" class="hover:text-primary hover:underline transition">
+            <a href="#services" class="hover:text-primary ">
               <p>Services</p>
             </a>
-            <a href="#projects" class="hover:text-primary hover:underline transition">
-              <p>Portfolio</p>
-            </a>
-            <a href="#contact" class="hover:text-primary hover:underline transition">
+            <a href="#contact" class="hover:text-primary">
               <p>Contact</p>
             </a>
           </div>
         </div>
-        <ThemeToggle />
       </nav>
+      <div class="ml-4">
+        <ThemeToggle />
+      </div>
     </nav>
+    
 
     <nav v-show="isOpen" @click="isOpen = false" class="md:hidden p-4 mt-2 flex flex-col gap-2 text-center font-bold"
       :class="{

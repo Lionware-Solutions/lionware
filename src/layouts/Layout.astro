@@ -1,169 +1,193 @@
 ---
-import Header from '../components/Header.vue';
-import Footer from '../components/Footer.astro';
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-			<script is:inline>
-				function getInitialTheme() {
-					const savedTheme = localStorage.getItem('theme');
-					if (savedTheme) return savedTheme;
-					
-					return window.matchMedia('(prefers-color-scheme: dark)').matches 
-						? 'dark' 
-						: 'light';
-				}
-				
-				const theme = getInitialTheme();
-				document.documentElement.classList.toggle('dark', theme === 'dark');
-				document.documentElement.setAttribute('data-theme', theme);
-			</script>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Portfolio Template made with Astro</title>
-		<meta name="description" content="Lionware Solutions IT partner.">
-		<meta name="author" content="@LionWare">
-		<meta property="og:type" content="website">
-		<meta name="robots" content="index, follow">
-		<meta name="googlebot" content="index, follow">
-</head>
-	<body>
-		<div class="selection:bg-blue-200/60 dark:selection:bg-blue-200/30">
-			<Header client:load initialY={0} />
-			<div
-				class="container relative flex flex-col max-w-[1400px] mx-auto w-full text-sm sm:text-base min-h-screen">
-				<slot />
-			</div>
-			<Footer />
-		</div>
-	</body>
+  <head>
+    <script is:inline>
+      function getInitialTheme() {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) return savedTheme;
+
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      }
+
+      const theme = getInitialTheme();
+      document.documentElement.classList.toggle("dark", theme === "dark");
+      document.documentElement.setAttribute("data-theme", theme);
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Lionware</title>
+    <meta name="description" content="Lionware Solutions IT partner." />
+    <meta name="author" content="@LionWare" />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+  </head>
+  <body>
+    <div class="selection:bg-blue-200/60 dark:selection:bg-blue-200/30">
+      <Header client:load initialY={0} />
+      <div
+        class="container relative flex flex-col max-w-[1400px] mx-auto w-full text-sm sm:text-base min-h-screen"
+      >
+        <slot />
+      </div>
+      <Footer />
+    </div>
+  </body>
 </html>
 <style is:global>
-	
-	html {
-		font-family: system-ui, sans-serif;
-		scroll-behavior: smooth;
-	}
-
-
-body {
-  @apply bg-slate-50 dark:bg-slate-950 text-black dark:text-gray-50 transition duration-300;
-}
-
-* {
-  font-family: "Encode Sans Semi Condensed", sans-serif;
-  font-display: swap;
-}
-
-h1,
-h2,
-h3,
-.poppins {
-  font-family: "Encode Sans Semi Condensed", sans-serif;
-  font-display: swap;
-}
-
-.buttonShadow {
-  box-shadow: 0px 14px 55px rgba(3, 123, 252, 0.45);
-}
-
-.specialSpin {
-  animation: spin 5s linear infinite;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
+  html {
+    font-family: system-ui, sans-serif;
+    scroll-behavior: smooth;
   }
 
-  to {
-    transform: rotate(360deg);
+  body {
+    @apply bg-slate-50 dark:bg-slate-950 text-black dark:text-gray-50 transition duration-300;
   }
-}
 
-.hamburger-top,
-.hamburger-middle,
-.hamburger-bottom {
-  position: absolute;
-  right: 0;
-  width: 24px;
-  height: 2px;
-  background: #037bfc;
-  transform: rotate(0);
-  transition: all 0.5s;
-}
+  * {
+    font-family: "Encode Sans Semi Condensed", sans-serif;
+    font-display: swap;
+  }
+  /* Estilos para la barra de desplazamiento en navegadores webkit (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
 
-.hamburger-middle {
-  transform: translateY(7px);
-}
+  ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 10px;
+  }
 
-.hamburger-bottom {
-  transform: translateY(14px);
-}
+  ::-webkit-scrollbar-thumb {
+    background-color: #4a4a4a;
+    border-radius: 10px;
+    border: 2px solid #1a1a1a;
+  }
 
-.open {
-  transform: rotate(90deg);
-  transform: translateY(0px);
-}
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #666;
+  }
 
-.open .hamburger-top {
-  transform: rotate(45deg) translateY(6px) translate(6px);
-}
+  /* Estilos para Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #4a4a4a #1a1a1a;
+  }
 
-.open .hamburger-middle {
-  display: none;
-}
+  h1,
+  h2,
+  h3,
+  .poppins {
+    font-family: "Encode Sans Semi Condensed", sans-serif;
+    font-display: swap;
+  }
 
-.open .hamburger-bottom {
-  transform: rotate(-45deg) translateY(6px) translate(-6px);
-}
+  .buttonShadow {
+    box-shadow: 0px 14px 55px rgba(3, 123, 252, 0.45);
+  }
 
-@keyframes fadeIn {
-  from {
+  .specialSpin {
+    animation: spin 5s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+    position: absolute;
+    right: 0;
+    width: 24px;
+    height: 2px;
+    background: #037bfc;
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
+
+  .hamburger-middle {
+    transform: translateY(7px);
+  }
+
+  .hamburger-bottom {
+    transform: translateY(14px);
+  }
+
+  .open {
+    transform: rotate(90deg);
+    transform: translateY(0px);
+  }
+
+  .open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translate(6px);
+  }
+
+  .open .hamburger-middle {
+    display: none;
+  }
+
+  .open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-link {
     opacity: 0;
     transform: translateY(10px);
+    animation: fadeIn 0.2s ease-in-out forwards;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .animate-link:nth-child(1) {
+    animation-delay: 0s;
   }
-}
 
-.animate-link {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeIn 0.2s ease-in-out forwards;
-}
+  .animate-link:nth-child(2) {
+    animation-delay: 0.1s;
+  }
 
-.animate-link:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.animate-link:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.animate-link:nth-child(3) {
-  animation-delay: 0.2s;
-}
-.animate-link:nth-child(4) {
-  animation-delay: 0.3s;
-}
-	code {
-		font-family:
-		Roboto,
-		Poppins,
-		Menlo,
-		Monaco,
-		Lucida Console,
-		Liberation Mono,
-		DejaVu Sans Mono,
-		Bitstream Vera Sans Mono,
-		Courier New,
-		monospace;
-	}
+  .animate-link:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .animate-link:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  code {
+    font-family:
+      Roboto,
+      Poppins,
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
 </style>

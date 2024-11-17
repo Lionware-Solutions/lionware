@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-// Estado del tema oscuro
 const isDark = ref(true)
 
-// Función para actualizar el tema y guardar en localStorage
 const updateTheme = (dark: boolean) => {
   isDark.value = dark
   if (dark) {
@@ -16,12 +14,10 @@ const updateTheme = (dark: boolean) => {
   }
 }
 
-// Alterna el tema cuando se hace clic en el switch
 const toggleTheme = () => {
   updateTheme(!isDark.value)
 }
 
-// Configuración inicial del tema según `localStorage` o el sistema
 onMounted(() => {
   const theme = localStorage.getItem('theme')
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -103,16 +99,13 @@ onMounted(() => {
 
 .toggle input:checked+label {
   transition: .5s;
-  background-color: #002c84;
+  background-color: #586379d7;
   /* Fondo azul oscuro para modo oscuro */
 }
 
 
 .toggle input:checked+label::before {
   transform: translateX(24px);
-  background-color: #5890ff;
-
-  /* Mueve el círculo a la derecha */
 }
 
 .icon-sun {
