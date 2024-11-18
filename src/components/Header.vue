@@ -55,7 +55,7 @@ const isOpen = ref(false);
         @click="goTop"
       >
         <span class="inline-block">
-          <img class="px-2 w-[5rem]" src="/lionwareok.svg" alt="" />
+          <img class="px-2 w-[5rem]" src="/lionware/lionwareok.svg" alt="" />
         </span>
         <h1 class="font-medium text-xl">
           <span class="font-bold poppins ml-1 hidden md:inline-block">Lionware Solutions</span>

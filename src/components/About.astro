@@ -22,7 +22,7 @@
         <div class="grid md:grid-cols-2 items-center gap-8">
           <div>
             <img
-              src="/career.webp"
+              src="/lionware/career.webp"
               alt="Lionware Overview"
               class="w-full h-auto rounded-lg shadow-lg"
             />
@@ -52,7 +52,7 @@
           </div>
           <div>
             <img
-              src="/team.jpg"
+              src="/lionware/team.jpg"
               alt="Lionware Team"
               class="w-full h-auto rounded-lg shadow-lg"
             />
@@ -64,7 +64,7 @@
         <div class="grid md:grid-cols-2 items-center gap-8">
           <div>
             <img
-              src="/vision.jpg"
+              src="/lionware/vision.jpg"
               alt="Our Vision"
               class="w-full h-auto rounded-lg shadow-lg"
             />
@@ -135,7 +135,7 @@
 
     let currentIndex = 0;
 
-    function showTab(index) {
+    function showTab(index: number) {
       buttons.forEach((btn, i) => {
         btn.classList.toggle("active", i === index);
         contents[i].classList.toggle("active", i === index);
