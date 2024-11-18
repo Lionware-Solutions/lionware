@@ -10,4 +10,7 @@ export default defineConfig({
   base: '/lionware/', // Ruta base del repositorio (nombre del repositorio)
   site: 'https://lionware-solutions.github.io/lionware/', // URL pública de tu sitio en GitHub Pages
   outDir: './docs',
+  build: {
+    assetsPrefix: '/lionware/',
+  },
 });
