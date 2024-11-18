@@ -17,14 +17,14 @@
     </div>
 
     <!-- Tab Content Wrapper -->
-    <div class="tab-content-wrapper" style="min-height: 400px;">
+    <div class="tab-content-wrapper" style="min-height: 500px;">
       <div id="overview" class="tab-content active">
         <div class="grid md:grid-cols-2 items-center gap-8">
           <div>
             <img
               src="/career.webp"
               alt="Lionware Overview"
-              class="w-full h-auto rounded-md shadow-lg max-w-sm mx-auto"
+              class="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
           <div>
@@ -54,7 +54,7 @@
             <img
               src="/team.jpg"
               alt="Lionware Team"
-              class="w-full h-auto rounded-md shadow-lg max-w-sm mx-auto"
+              class="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
         </div>
@@ -66,7 +66,7 @@
             <img
               src="/vision.jpg"
               alt="Our Vision"
-              class="w-full h-auto rounded-md shadow-lg max-w-sm mx-auto"
+              class="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
           <div>
@@ -109,12 +109,13 @@
   .tab-content-wrapper {
     position: relative;
     overflow: hidden;
+    min-height: 500px; /* Ajusta para mantener las pestañas uniformes */
   }
 
   .tab-content {
-    margin-top: 3rem;
+    margin-top: 2rem;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(-20px);
     position: absolute;
     width: 100%;
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -122,7 +123,7 @@
 
   .tab-content.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
     position: relative;
   }
 </style>
@@ -132,16 +133,27 @@
     const buttons = document.querySelectorAll(".tab-button");
     const contents = document.querySelectorAll(".tab-content");
 
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        // Remove active class from all buttons and contents
-        buttons.forEach((btn) => btn.classList.remove("active"));
-        contents.forEach((content) => content.classList.remove("active"));
+    let currentIndex = 0;
 
-        // Add active class to the clicked button and its corresponding content
-        button.classList.add("active");
-        document.getElementById(button.dataset.tab).classList.add("active");
+    function showTab(index) {
+      buttons.forEach((btn, i) => {
+        btn.classList.toggle("active", i === index);
+        contents[i].classList.toggle("active", i === index);
+      });
+    }
+
+    // Event listener for buttons
+    buttons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        currentIndex = index;
+        showTab(index);
       });
     });
+
+    // Auto-switch tabs every 5 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % buttons.length;
+      showTab(currentIndex);
+    }, 5000);
   });
 </script>
