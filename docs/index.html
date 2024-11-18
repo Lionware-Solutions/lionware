@@ -1,52 +1,133 @@
-<!DOCTYPE html><html lang="en"> <head><script>
-      function getInitialTheme() {
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme) return savedTheme;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    function getInitialTheme() {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) return savedTheme;
 
-        return window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light";
+      return window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    }
+
+    const theme = getInitialTheme();
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    document.documentElement.setAttribute("data-theme", theme);
+  </script>
+  <meta charset="UTF-8">
+  <meta name="description" content="Astro description">
+  <meta name="viewport" content="width=device-width">
+  <meta name="generator" content="Astro v4.16.6">
+  <title>Lionware</title>
+  <meta name="description" content="Lionware Solutions IT partner.">
+  <meta name="author" content="@LionWare">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+
+  <!-- Corregí las rutas agregando /lionware/ al inicio -->
+  <link rel="stylesheet" href="/lionware/_astro/index.BDuftWjH.css">
+  <script type="module">
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabs = document.querySelectorAll(".tab-button");
+      const contents = document.querySelectorAll(".tab-content");
+      let currentTab = 0;
+
+      function showTab(index) {
+        tabs.forEach((tab, i) => {
+          tab.classList.toggle("active", i === index);
+          contents[i].classList.toggle("active", i === index);
+        });
       }
 
-      const theme = getInitialTheme();
-      document.documentElement.classList.toggle("dark", theme === "dark");
-      document.documentElement.setAttribute("data-theme", theme);
-    </script><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.16.6"><title>Lionware</title><meta name="description" content="Lionware Solutions IT partner."><meta name="author" content="@LionWare"><meta property="og:type" content="website"><meta name="robots" content="index, follow"><meta name="googlebot" content="index, follow"><link rel="stylesheet" href="/lionware/_astro/index.BDuftWjH.css"><script type="module">document.addEventListener("DOMContentLoaded",()=>{const c=document.querySelectorAll(".tab-button"),s=document.querySelectorAll(".tab-content");let t=0;function l(e){c.forEach((n,o)=>{n.classList.toggle("active",o===e),s[o].classList.toggle("active",o===e)})}c.forEach((e,n)=>{e.addEventListener("click",()=>{t=n,l(n)})}),setInterval(()=>{t=(t+1)%c.length,l(t)},5e3)});
-</script></head> <body> <div class="selection:bg-blue-200/60 dark:selection:bg-blue-200/30"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();;(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="vtwgb" component-url="/lionware/_astro/Header.BtTCAII3.js" component-export="default" renderer-url="/lionware/_astro/client.Ct_kZ3y1.js" props="{&quot;initialY&quot;:[0,0]}" ssr="" client="load" opts="{&quot;name&quot;:&quot;Header&quot;,&quot;value&quot;:true}" await-children=""><header class="sticky z-50 top-0 duration-200 px-4 border-b border-solid py-6 bg-transparent border-transparent"><nav class="flex flex-row items-center justify-between max-w-[1400px] mx-auto"><div class="flex gap-4 items-center cursor-pointer text-primary hover:text-primary/80"><span class="inline-block"><img class="px-2 w-[5rem]" src="/lionware/lionwareok.svg" alt=""></span><h1 class="font-medium text-xl"><span class="font-bold poppins ml-1 hidden md:inline-block">Lionware Solutions</span></h1></div><div class="flex gap-4 items-center ml-auto relative"><button aria-label="expand mobile menu button" class="focus:outline-none md:hidden block p-2 absolute -top-4 right-0"><span class="hamburger-top"></span><span class="hamburger-middle"></span><span class="hamburger-bottom"></span></button></div><nav class="items-center flex-row hidden md:flex"><div class="flex pr-3"><div class="sm:flex items-center gap-4 text-center hidden"><a href="#hero" class="hover:text-primary"><p>Home</p></a><a href="#about" class="hover:text-primary"><p>About us</p></a><a href="#services" class="hover:text-primary"><p>Services</p></a><a href="#contact" class="hover:text-primary"><p>Contact</p></a></div></div></nav><div class="ml-4"><div class="toggle" data-v-f1bbfd49><input type="checkbox" id="theme-switch" checked data-v-f1bbfd49><label for="theme-switch" data-v-f1bbfd49><span class="icon-sun" data-v-f1bbfd49><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-f1bbfd49><path d="M19.9001 2.30719C19.7392 1.8976 19.1616 1.8976 19.0007 2.30719L18.5703 3.40247C18.5212 3.52752 18.4226 3.62651 18.298 3.67583L17.2067 4.1078C16.7986 4.26934 16.7986 4.849 17.2067 5.01054L18.298 5.44252C18.4226 5.49184 18.5212 5.59082 18.5703 5.71587L19.0007 6.81115C19.1616 7.22074 19.7392 7.22074 19.9001 6.81116L20.3305 5.71587C20.3796 5.59082 20.4782 5.49184 20.6028 5.44252L21.6941 5.01054C22.1022 4.849 22.1022 4.26934 21.6941 4.1078L20.6028 3.67583C20.4782 3.62651 20.3796 3.52752 20.3305 3.40247L19.9001 2.30719Z" fill="#1C274C" data-v-f1bbfd49></path><path d="M16.0328 8.12967C15.8718 7.72009 15.2943 7.72009 15.1333 8.12967L14.9764 8.52902C14.9273 8.65407 14.8287 8.75305 14.7041 8.80237L14.3062 8.95987C13.8981 9.12141 13.8981 9.70107 14.3062 9.86261L14.7041 10.0201C14.8287 10.0694 14.9273 10.1684 14.9764 10.2935L15.1333 10.6928C15.2943 11.1024 15.8718 11.1024 16.0328 10.6928L16.1897 10.2935C16.2388 10.1684 16.3374 10.0694 16.462 10.0201L16.8599 9.86261C17.268 9.70107 17.268 9.12141 16.8599 8.95987L16.462 8.80237C16.3374 8.75305 16.2388 8.65407 16.1897 8.52902L16.0328 8.12967Z" fill="#1C274C" data-v-f1bbfd49></path><path d="M12 22C17.5228 22 22 17.5228 22 12C22 11.5373 21.3065 11.4608 21.0672 11.8568C19.9289 13.7406 17.8615 15 15.5 15C11.9101 15 9 12.0899 9 8.5C9 6.13845 10.2594 4.07105 12.1432 2.93276C12.5392 2.69347 12.4627 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#1C274C" data-v-f1bbfd49></path></svg></span><span class="icon-moon" data-v-f1bbfd49><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-f1bbfd49><path d="M18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12Z" fill="white" data-v-f1bbfd49></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2V3C12.75 3.41421 12.4142 3.75 12 3.75C11.5858 3.75 11.25 3.41421 11.25 3V2C11.25 1.58579 11.5858 1.25 12 1.25ZM4.39861 4.39861C4.6915 4.10572 5.16638 4.10572 5.45927 4.39861L5.85211 4.79145C6.145 5.08434 6.145 5.55921 5.85211 5.85211C5.55921 6.145 5.08434 6.145 4.79145 5.85211L4.39861 5.45927C4.10572 5.16638 4.10572 4.6915 4.39861 4.39861ZM19.6011 4.39887C19.894 4.69176 19.894 5.16664 19.6011 5.45953L19.2083 5.85237C18.9154 6.14526 18.4405 6.14526 18.1476 5.85237C17.8547 5.55947 17.8547 5.0846 18.1476 4.79171L18.5405 4.39887C18.8334 4.10598 19.3082 4.10598 19.6011 4.39887ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H3C3.41421 11.25 3.75 11.5858 3.75 12C3.75 12.4142 3.41421 12.75 3 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM20.25 12C20.25 11.5858 20.5858 11.25 21 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H21C20.5858 12.75 20.25 12.4142 20.25 12ZM18.1476 18.1476C18.4405 17.8547 18.9154 17.8547 19.2083 18.1476L19.6011 18.5405C19.894 18.8334 19.894 19.3082 19.6011 19.6011C19.3082 19.894 18.8334 19.894 18.5405 19.6011L18.1476 19.2083C17.8547 18.9154 17.8547 18.4405 18.1476 18.1476ZM5.85211 18.1479C6.145 18.4408 6.145 18.9157 5.85211 19.2086L5.45927 19.6014C5.16638 19.8943 4.6915 19.8943 4.39861 19.6014C4.10572 19.3085 4.10572 18.8336 4.39861 18.5407L4.79145 18.1479C5.08434 17.855 5.55921 17.855 5.85211 18.1479ZM12 20.25C12.4142 20.25 12.75 20.5858 12.75 21V22C12.75 22.4142 12.4142 22.75 12 22.75C11.5858 22.75 11.25 22.4142 11.25 22V21C11.25 20.5858 11.5858 20.25 12 20.25Z" fill="white" data-v-f1bbfd49></path></svg></span></label></div></div></nav><nav style="display:none;" class="py-6 bg-transparent border-transparent md:hidden p-4 mt-2 flex flex-col gap-2 text-center font-bold"><a href="#hero" aria-label="Projects page link" class="border rounded p-2 border-primary animate-link"> Home </a><a href="#about" aria-label="About me page link" class="border rounded p-2 border-primary animate-link"> About us </a><a href="#contact" aria-label="Contact page link" class="border rounded p-2 border-primary animate-link"> Contact </a><a href="https://www.linkedin.com/" target="_blank" aria-label="Contact page link" class="rounded p-2 bg-primary animate-link text-black"> Get in touch </a></nav><div class="fixed bottom-0 right-0 p-10 z-[10]"><button aria-label="go to top button" class="hidden rounded-full bg-transparent text-primary px-3 sm:px-4 hover:scale-[1.3] transition-all cursor-pointer aspect-square grid place-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewbox="0 0 24 24"><path fill="currentColor" d="m4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8z"></path></svg></button></div></header><!--astro:end--></astro-island> <div class="container relative flex flex-col max-w-[1400px] mx-auto w-full text-sm sm:text-base min-h-screen">  <main class="flex flex-col flex-1 p-4"> <section id="hero" class="grid grid-cols-1 lg:grid-cols-2 gap-10 py-8 sm:py-14"> <div class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg:gap-10"> <h1 class="font-semibold text-4xl sm:text-5xl md:text-6xl">
-Welcome to
-<span class="poppins text-primary">Lionware</span> <br> <span class="poppins text-primary">Solutions</span>
-Your IT Partner
-</h1> <p class="text-base sm:text-lg md:text-xl text-balance"> At Lionware Solutions, we lead the way in IT consultancy, delivering digital solutions to take your business to new heights. We are the kings of the IT jungle. </p> <div class="flex  items-center justify-center"> <a href="https://www.linkedin.com/" target="_blank"> <button class="minimal-button text-base sm:text-lg md:text-xl poppins px-6 py-3 rounded-full border border-primary text-primary dark:text-white hover:bg-primary hover:text-white dark:hover:bg-primary transition-all duration-300"> <h2 class="flex items-center">
-Get in touch
-</h2> </button> </a> </div> </div> <div class="flex relative max-w-[700px] w-full mx-auto"> <video autoplay muted loop playsinline class="w-full h-auto object-cover rounded-md shadow-lg relative z-10"> <source src="/lionware/_astro/Animation.CjfZVGO5.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video> </div> </section> <div class="md:mb-52"></div> <section id="about" class="py-10 px-4 text-gray-800 dark:text-gray-100"> <div class="text-center mb-12"> <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold"> <span class="text-primary">About</span> Lionware
-</h3> <p class="text-lg sm:text-xl md:text-2xl mt-4">
-Discover who we are and why we’re the best digital partner for your business.
-</p> </div> <!-- Tabs --> <div class="max-w-6xl mx-auto"> <div class="flex justify-center mb-8"> <button class="tab-button active" data-tab="overview">Overview</button> <button class="tab-button" data-tab="team">Our Team</button> <button class="tab-button" data-tab="values">Our Vision</button> </div> <!-- Tab Content Wrapper --> <div class="tab-content-wrapper" style="min-height: 500px;"> <div id="overview" class="tab-content active"> <div class="grid md:grid-cols-2 items-center gap-8"> <div> <img src="/lionware/career.webp" alt="Lionware Overview" class="w-full h-auto rounded-lg shadow-lg"> </div> <div> <h2 class="text-2xl md:text-3xl font-bold text-primary">We Are the IT Kings</h2> <p class="text-lg mt-4">
-Lionware Solutions is more than an IT consultancy. We lead the way in transforming businesses and expanding their online presence. Like the lion, we dominate the digital jungle with cutting-edge solutions tailored to make your business roar louder than the competition.
-</p> <a href="#contact" class="mt-6 inline-block bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-primary-dark transition">
-Learn More
-</a> </div> </div> </div> <div id="team" class="tab-content"> <div class="grid md:grid-cols-2 items-center gap-8"> <div> <h2 class="text-2xl md:text-3xl font-bold text-primary">Meet Our Team</h2> <p class="text-lg mt-4">
-Our team of experienced IT professionals is passionate about delivering innovative and high-quality solutions. With expertise across various industries, we work collaboratively to ensure every project is a success.
-</p> <a href="#contact" class="mt-6 inline-block bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-primary-dark transition">
-Join Us
-</a> </div> <div> <img src="/lionware/team.jpg" alt="Lionware Team" class="w-full h-auto rounded-lg shadow-lg"> </div> </div> </div> <div id="values" class="tab-content"> <div class="grid md:grid-cols-2 items-center gap-8"> <div> <img src="/lionware/vision.jpg" alt="Our Vision" class="w-full h-auto rounded-lg shadow-lg"> </div> <div> <h2 class="text-2xl md:text-3xl font-bold text-primary">Our Vision</h2> <p class="text-lg mt-4">
-At Lionware, we strive to empower businesses to achieve digital excellence. Our vision is to create innovative IT solutions that help our clients grow and thrive in an ever-changing digital landscape.
-</p> <a href="#services" class="mt-6 inline-block bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-primary-dark transition">
-Explore Services
-</a> </div> </div> </div> </div> </div> </section>   <div class="md:my-24"></div> <section class="flex flex-col gap-6 pt-12 pb-12 px-4 min-h-screen items-center justify-center" id="services"> <div class="text-center mb-6"> <h3 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-800 dark:text-gray-200">Our Services</h3> <h4 class=" text-xl sm:text-2xl md:text-3xl mt-5 font-semibold text-gray-700 dark:text-gray-300">
-Discover what <span class="text-primary">Lionware Solutions</span> are
-</h4> </div> <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-items-center max-w-[1200px]"> <div class="shadow-lg transition-transform hover:scale-105 rounded-lg overflow-hidden bg-white dark:bg-[#1a1a1a] w-full max-w-[400px] mx-auto flex flex-col"> <div class="h-48" style="background-image:url(../../public/work4.jpg);background-size:cover;background-position:center"></div> <div class="flex-grow p-4 text-center"> <h5 class="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">Professional Web Development</h5> <p class="text-gray-600 dark:text-gray-400 text-sm"> Our web development services provide top-quality, responsive, and user-friendly websites. We integrate advanced functionalities like inventory management, shopping carts, and social media integration to ensure a seamless user experience. </p> </div> </div><div class="shadow-lg transition-transform hover:scale-105 rounded-lg overflow-hidden bg-white dark:bg-[#1a1a1a] w-full max-w-[400px] mx-auto flex flex-col"> <div class="h-48" style="background-image:url(../../public/work3.jpg);background-size:cover;background-position:center"></div> <div class="flex-grow p-4 text-center"> <h5 class="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">IT Support &amp; Maintenance</h5> <p class="text-gray-600 dark:text-gray-400 text-sm"> Ensure smooth operations with our reliable IT support and maintenance services. From troubleshooting to regular updates, we’re here to keep your business running smoothly. </p> </div> </div><div class="shadow-lg transition-transform hover:scale-105 rounded-lg overflow-hidden bg-white dark:bg-[#1a1a1a] w-full max-w-[400px] mx-auto flex flex-col"> <div class="h-48" style="background-image:url(../../public/work6.jpg);background-size:cover;background-position:center"></div> <div class="flex-grow p-4 text-center"> <h5 class="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">Dynamic E-commerce Solutions</h5> <p class="text-gray-600 dark:text-gray-400 text-sm"> Our dynamic e-commerce solutions provide an all-in-one platform for managing inventory, processing purchases via WhatsApp, and supporting customer interactions with chatbot integration. </p> </div> </div><div class="shadow-lg transition-transform hover:scale-105 rounded-lg overflow-hidden bg-white dark:bg-[#1a1a1a] w-full max-w-[400px] mx-auto flex flex-col"> <div class="h-48" style="background-image:url(../../public/work1.jpg);background-size:cover;background-position:center"></div> <div class="flex-grow p-4 text-center"> <h5 class="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">Cloud Solutions &amp; Management</h5> <p class="text-gray-600 dark:text-gray-400 text-sm"> We provide scalable cloud solutions to ensure your business is always online, accessible, and secure. Our cloud management services support your business needs in a digital-first environment. </p> </div> </div><div class="shadow-lg transition-transform hover:scale-105 rounded-lg overflow-hidden bg-white dark:bg-[#1a1a1a] w-full max-w-[400px] mx-auto flex flex-col"> <div class="h-48" style="background-image:url(../../public/work2.jpg);background-size:cover;background-position:center"></div> <div class="flex-grow p-4 text-center"> <h5 class="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">Cybersecurity Consulting</h5> <p class="text-gray-600 dark:text-gray-400 text-sm"> Protect your digital assets with our expert cybersecurity solutions. We offer risk assessments, vulnerability management, and strategic security solutions tailored to keep your data safe. </p> </div> </div><div class="shadow-lg transition-transform hover:scale-105 rounded-lg overflow-hidden bg-white dark:bg-[#1a1a1a] w-full max-w-[400px] mx-auto flex flex-col"> <div class="h-48" style="background-image:url(../../public/work5.jpg);background-size:cover;background-position:center"></div> <div class="flex-grow p-4 text-center"> <h5 class="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">Video Editing &amp; Branding</h5> <p class="text-gray-600 dark:text-gray-400 text-sm"> We offer professional video editing services, perfect for enhancing your brand’s digital content. From color correction to motion graphics, we tailor every frame to capture your audience’s attention. </p> </div> </div> </div> </section> <div class="md:my-24"></div> <section id="contact" class="py-16 px-4 text-gray-800 dark:text-gray-100"> <div class="text-center mb-16"> <h1 class="text-3xl lg:text-4xl font-bold tracking-tight">
-Have a project in mind? <span class="text-primary">Contact</span> us!
-</h1> </div> <!-- Disposición en tres columnas --> <div class="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-start"> <!-- Información de Contacto --> <div class="flex flex-col justify-between"> <div> <h2 class="text-2xl font-bold mb-4">Let's Build Something Great Together</h2> <p class="mb-6 text-lg">
-Whether you have an idea or need assistance with a project, our team is here to help you achieve your business goals. Connect with us via email or through our social platforms, and let’s start building the future of your business.
-</p> <div class="flex flex-col gap-4 text-lg"> <div class="flex items-center gap-x-4"> <a href="https://github.com/" target="_blank" class="hover:text-primary flex items-center gap-x-2 transition" aria-label="GitHub Profile"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6" data-icon="github">  <symbol id="ai:local:github"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></symbol><use xlink:href="#ai:local:github"></use>  </svg>
-GitHub
-</a> <a href="https://www.linkedin.com/" target="_blank" class="hover:text-primary flex items-center gap-x-2 transition" aria-label="LinkedIn Profile"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6" data-icon="linkedin">  <symbol id="ai:local:linkedin"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></symbol><use xlink:href="#ai:local:linkedin"></use>  </svg>
-LinkedIn
-</a> </div> <a href="mailto:contact@lionware.com" class="text-lg font-bold hover:text-primary flex items-center gap-x-2 transition"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="envelope">  <symbol id="ai:local:envelope"><path fill="currentColor" d="m20 8-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"/></symbol><use xlink:href="#ai:local:envelope"></use>  </svg>
-contact@lionware.com
-</a> </div> </div> </div> <!-- Formulario de Contacto --> <div> <form class="flex flex-col space-y-6" method="POST"> <div> <label for="email" class="block mb-2 text-sm font-semibold">Your Email</label> <input type="email" id="email" name="email" required placeholder="you@example.com" class="w-full p-3 rounded-md bg-transparent border border-gray-500 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"> </div> <div> <label for="subject" class="block mb-2 text-sm font-semibold">Subject</label> <input type="text" id="subject" name="subject" required placeholder="Project or Service Inquiry" class="w-full p-3 rounded-md bg-transparent border border-gray-500 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"> </div> <div> <label for="message" class="block mb-2 text-sm font-semibold">Message</label> <textarea id="message" name="message" placeholder="Tell us about your project or how we can help..." required class="w-full p-3 rounded-md bg-transparent border border-gray-500 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary" rows="5"></textarea> </div> <button type="submit" class="bg-primary text-white font-semibold py-3 rounded-md hover:bg-primary-dark transition duration-300">
-Get in Touch
-</button> </form> </div> <!-- Calendly Widget --> <div class="bg-white dark:bg-slate-800 rounded-md shadow-md p-4"> <div class="calendly-inline-widget" data-url="https://calendly.com/lionwaresolution/30min" style="min-width:100%; height:450px;"></div> <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> </div> </div> </section>  </main>  </div> <footer class="dark:bg-black bg-slate-200 border-t-2 border-solid border-primary w-full" id="contact"> <div class="mx-auto max-w-screen-xl my-8"> <a href="/#hero" class="flex justify-center items-center text-3xl font-semibold text-primary hover:text-blue-300 hover:underline"> Lionware </a> <ul class="flex flex-wrap justify-center items-center mb-6 my-8"> <li> <a class="mr-4 md:mr-6 hover:text-primary" href="#services">Services</a> </li> <li> <a class="mr-4 md:mr-6 hover:text-primary" href="#services">Portfolio</a> </li> <li> <a class="mr-4 md:mr-6 hover:text-primary" href="#about">About us</a> </li> <li> <a class="mr-4 md:mr-6 hover:text-primary" href="#contact">Contact</a> </li> <li> <a href="https://www.linkedin.com/" target="_blank" class="mr-4 hover:text-primary hover:underline md:mr-6">Get in touch</a> </li> </ul> </div> <section class="border-t border-primary py-2"> <div class="flex justify-self-center "> <img class="px-2 w-[3rem]" src="/public/lionwareok.svg" alt=""> <p class="w-60 opacity-70 font-extralight">&copy; 2024 Lionware Solutions</p> </div> </section> </footer> </div> </body></html> 
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+          currentTab = index;
+          showTab(index);
+        });
+      });
+
+      setInterval(() => {
+        currentTab = (currentTab + 1) % tabs.length;
+        showTab(currentTab);
+      }, 5000);
+    });
+  </script>
+</head>
+<body>
+  <div class="selection:bg-blue-200/60 dark:selection:bg-blue-200/30">
+    <header class="sticky z-50 top-0 duration-200 px-4 border-b border-solid py-6 bg-transparent border-transparent">
+      <nav class="flex flex-row items-center justify-between max-w-[1400px] mx-auto">
+        <div class="flex gap-4 items-center cursor-pointer text-primary hover:text-primary/80">
+          <span class="inline-block">
+            <img class="px-2 w-[5rem]" src="/lionware/lionwareok.svg" alt="">
+          </span>
+          <h1 class="font-medium text-xl">
+            <span class="font-bold poppins ml-1 hidden md:inline-block">Lionware Solutions</span>
+          </h1>
+        </div>
+        <nav class="items-center flex-row hidden md:flex">
+          <div class="flex pr-3">
+            <div class="sm:flex items-center gap-4 text-center hidden">
+              <a href="#hero" class="hover:text-primary">
+                <p>Home</p>
+              </a>
+              <a href="#about" class="hover:text-primary">
+                <p>About us</p>
+              </a>
+              <a href="#services" class="hover:text-primary">
+                <p>Services</p>
+              </a>
+              <a href="#contact" class="hover:text-primary">
+                <p>Contact</p>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </nav>
+    </header>
+
+    <div class="container relative flex flex-col max-w-[1400px] mx-auto w-full text-sm sm:text-base min-h-screen">
+      <main class="flex flex-col flex-1 p-4">
+        <section id="hero" class="grid grid-cols-1 lg:grid-cols-2 gap-10 py-8 sm:py-14">
+          <div class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg:gap-10">
+            <h1 class="font-semibold text-4xl sm:text-5xl md:text-6xl">
+              Welcome to
+              <span class="poppins text-primary">Lionware</span>
+              <br>
+              <span class="poppins text-primary">Solutions</span>
+              Your IT Partner
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl text-balance">
+              At Lionware Solutions, we lead the way in IT consultancy, delivering digital solutions to take your business to new heights. We are the kings of the IT jungle.
+            </p>
+            <div class="flex items-center justify-center">
+              <a href="https://www.linkedin.com/" target="_blank">
+                <button class="minimal-button text-base sm:text-lg md:text-xl poppins px-6 py-3 rounded-full border border-primary text-primary dark:text-white hover:bg-primary hover:text-white dark:hover:bg-primary transition-all duration-300">
+                  <h2 class="flex items-center">Get in touch</h2>
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="flex relative max-w-[700px] w-full mx-auto">
+            <!-- Ruta corregida para el video -->
+            <video autoplay muted loop playsinline class="w-full h-auto object-cover rounded-md shadow-lg relative z-10">
+              <source src="/lionware/_astro/Animation.CjfZVGO5.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="dark:bg-black bg-slate-200 border-t-2 border-solid border-primary w-full" id="contact">
+      <div class="mx-auto max-w-screen-xl my-8">
+        <a href="/#hero" class="flex justify-center items-center text-3xl font-semibold text-primary hover:text-blue-300 hover:underline">
+          Lionware
+        </a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
